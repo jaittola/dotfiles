@@ -12,7 +12,7 @@
 (show-paren-mode 1)
 (column-number-mode 1)
 (setq-default indent-tabs-mode nil)
-;; (add-hook 'before-save-hook 'delete-trailing-whitespace)
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
 (setq-default show-trailing-whitespace t)
 (setq-default c-basic-offset 4)
 ;;(setq-default js-indent-level 2)
@@ -46,6 +46,7 @@
 (setq cider-repl-wrap-history t)
 (setq cider-repl-history-size 1000)
 (setq cider-repl-history-file "~/.cider-history")
+(add-hook 'clojure-mode-hook #'smartparens-mode)
 
 ;; (setq cider-cljs-lein-repl "(do (use 'figwheel-sidecar.repl-api) (start-figwheel!) (cljs-repl))")
 
@@ -98,7 +99,7 @@ package    (interactive)
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (magit clojure-mode-extra-font-locking quack puppet-mode go-mode geiser clojure-test-mode cider))))
+    (smartparens magit clojure-mode-extra-font-locking quack puppet-mode go-mode geiser clojure-test-mode cider))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
