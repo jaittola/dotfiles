@@ -1,0 +1,8 @@
+"\e[1;5D": backward-word
+"\e[1;5C": forward-word
+
+set meta-flag on
+set input-meta on
+set output-meta on
+set convert-meta off
+
