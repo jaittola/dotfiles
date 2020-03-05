@@ -68,10 +68,10 @@
 ;; Previous window in ctrl-x p
 (define-key global-map (kbd "C-x p")
   (lambda ()
-package    (interactive)
-    (other-window -1)))
+    (interactive (other-window -1))))
 
 (define-key global-map (kbd "C-x g") 'magit-status)
+(define-key global-map (kbd "C-c g") 'magit-file-dispatch)
 
 ;; Save buffers on focus out
 (add-hook 'focus-out-hook (lambda () (save-some-buffers t)))
