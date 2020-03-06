@@ -39,7 +39,7 @@
 (package-initialize)
 
 ;; clojure-related stuff
-(add-hook 'cide-moder-hook 'cider-turn-on-eldoc-mode)
+(add-hook 'cider-moder-hook 'cider-turn-on-eldoc-mode)
 (setq cider-popup-stacktraces nil)
 (setq cider-repl-popup-stacktraces nil)
 (setq cider-auto-select-error-buffer t)
@@ -99,7 +99,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (smartparens magit clojure-mode-extra-font-locking quack puppet-mode go-mode geiser clojure-test-mode cider))))
+    (clojurescript-mode clojure-mode smartparens magit clojure-mode-extra-font-locking quack puppet-mode go-mode geiser clojure-test-mode cider))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
