@@ -46,7 +46,11 @@
 (setq cider-repl-wrap-history t)
 (setq cider-repl-history-size 1000)
 (setq cider-repl-history-file "~/.cider-history")
-(add-hook 'clojure-mode-hook #'smartparens-mode)
+(add-hook 'clojure-mode-hook #'smartparens-strict-mode)
+(eval-after-load "smartparens"
+  '(progn
+     (define-key smartparens-mode-map (kbd "C-c f") 'sp-forward-slurp-sexp)
+     (define-key smartparens-mode-map (kbd "C-c b") 'sp-backward-slurp-sexp)))
 
 ;; (setq cider-cljs-lein-repl "(do (use 'figwheel-sidecar.repl-api) (start-figwheel!) (cljs-repl))")
 
