@@ -50,7 +50,9 @@
 (eval-after-load "smartparens"
   '(progn
      (define-key smartparens-mode-map (kbd "C-c f") 'sp-forward-slurp-sexp)
-     (define-key smartparens-mode-map (kbd "C-c b") 'sp-backward-slurp-sexp)))
+     (define-key smartparens-mode-map (kbd "C-c b") 'sp-backward-slurp-sexp)
+     (define-key smartparens-mode-map (kbd "C-c (") 'sp-wrap-round)
+     (define-key smartparens-mode-map (kbd "C-c )") 'sp-unwrap-sexp)))
 
 ;; (setq cider-cljs-lein-repl "(do (use 'figwheel-sidecar.repl-api) (start-figwheel!) (cljs-repl))")
 
