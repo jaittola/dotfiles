@@ -16,3 +16,6 @@ zmodload -i zsh/complist
 
 zstyle ':completion:*' special-dirs true
 
+ZSH_EXTRAS="${HOME}/.zshrc-extras"
+[ -f "$ZSH_EXTRAS" ] && source ${ZSH_EXTRAS}
+
