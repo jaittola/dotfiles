@@ -1,14 +1,3 @@
-;; (add-to-list 'load-path "~/Library/Slime/slime-2012-10-02/")
-;; (add-to-list 'load-path ".")
-;; (prefer-coding-system 'utf-8)
-;; (setq slime-net-coding-system 'utf-8-unix)
-;; (set-language-environment "UTF-8")
-;; (setq slime-lisp-implementations
-;;      '((sbcl ("sbcl") :coding-system utf-8-unix)))
-;; (setq inferior-lisp-program "/usr/local/bin/sbcl")
-;; (require 'slime-autoloads)
-;; (slime-setup)
-
 (show-paren-mode 1)
 (column-number-mode 1)
 (setq-default indent-tabs-mode nil)
