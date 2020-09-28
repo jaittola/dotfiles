@@ -104,7 +104,9 @@
   ;; Use prettier-js to format with prettier.
   (prettier-js-mode)
   (eval-after-load "tide"
-    '(define-key tide-mode-map (kbd "C-c o") 'tide-organize-imports)))
+    '(progn
+       (define-key tide-mode-map (kbd "C-c o") 'tide-organize-imports)
+       (define-key tide-mode-map (kbd "C-c r") 'tide-rename-symbol))))
 
 ;; aligns annotation to the right hand side
 (setq company-tooltip-align-annotations t)
@@ -130,5 +132,11 @@
  ;; If there is more than one, they won't work right.
  '(column-number-mode t)
  '(package-selected-packages
-   '(prettier-js company tide clojurescript-mode clojure-mode smartparens magit clojure-mode-extra-font-locking quack puppet-mode go-mode geiser clojure-test-mode cider))
+   '(markdown-mode markdown-preview-eww markdown-preview-mode prettier-js company tide clojurescript-mode clojure-mode smartparens magit clojure-mode-extra-font-locking quack puppet-mode go-mode geiser clojure-test-mode cider))
  '(show-paren-mode t))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
