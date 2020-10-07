@@ -132,7 +132,7 @@
  ;; If there is more than one, they won't work right.
  '(column-number-mode t)
  '(package-selected-packages
-   '(markdown-mode markdown-preview-eww markdown-preview-mode prettier-js company tide clojurescript-mode clojure-mode smartparens magit clojure-mode-extra-font-locking quack puppet-mode go-mode geiser clojure-test-mode cider))
+   '(yaml-mode markdown-mode markdown-preview-eww markdown-preview-mode prettier-js company tide clojurescript-mode clojure-mode smartparens magit clojure-mode-extra-font-locking quack puppet-mode go-mode geiser clojure-test-mode cider))
  '(show-paren-mode t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
