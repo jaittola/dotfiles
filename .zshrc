@@ -1,3 +1,5 @@
+PS1='%m %1~ %# '
+
 bindkey '\e[1;5D' backward-word
 bindkey '\e[1;5C' forward-word
 
