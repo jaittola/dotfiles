@@ -17,14 +17,16 @@
 (setq mac-option-modifier 'none)
 (setq mac-command-key-is-meta 'none)
 
-(set-frame-font "Monaco-10" t t)
+(when (member "Monaco" (font-family-list))
+  (set-frame-font "Monaco-10" t t))
+(when (member "DejaVu Sans Mono" (font-family-list))
+  (set-frame-font "DejaVu Sans Mono-10" t t))
 
 (setq cider-lein-command "/usr/local/bin/lein")
 
 (require 'package)
-(setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
-                         ("marmalade" . "http://marmalade-repo.org/packages/")
-                         ("melpa" . "https://melpa.org/packages/")))
+(setq package-archives '(("melpa" . "https://melpa.org/packages/")
+                         ("gnu" . "http://elpa.gnu.org/packages/")))
 (package-initialize)
 
 ;; clojure-related stuff
