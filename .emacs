@@ -158,3 +158,17 @@
  (let ((region (buffer-substring beg end)))
    (delete-region beg end)
    (insert (nreverse region))))
+
+;; Adjust Magit's logic of opening windows
+(setq magit-display-buffer-function
+      (lambda (buffer)
+        (display-buffer
+         buffer (if (and (derived-mode-p 'magit-mode)
+                         (memq (with-current-buffer buffer major-mode)
+                               '(magit-process-mode
+                                 magit-revision-mode
+                                 magit-diff-mode
+                                 magit-stash-mode
+                                 magit-status-mode)))
+                    nil
+                  '(display-buffer-same-window)))))
