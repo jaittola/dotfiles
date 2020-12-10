@@ -110,6 +110,14 @@
        (define-key tide-mode-map (kbd "C-c o") 'tide-organize-imports)
        (define-key tide-mode-map (kbd "C-c r") 'tide-rename-symbol))))
 
+;; Swift with sourcekit-lsp
+(eval-after-load 'lsp-mode
+  (progn
+    (require 'lsp-sourcekit)
+    (setq lsp-sourcekit-executable
+          "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/sourcekit-lsp")))
+(add-hook 'swift-mode-hook (lambda () (lsp)))
+
 ;; aligns annotation to the right hand side
 (setq company-tooltip-align-annotations t)
 
@@ -134,7 +142,7 @@
  ;; If there is more than one, they won't work right.
  '(column-number-mode t)
  '(package-selected-packages
-   '(yaml-mode markdown-mode markdown-preview-eww markdown-preview-mode prettier-js company tide clojurescript-mode clojure-mode smartparens magit clojure-mode-extra-font-locking quack puppet-mode go-mode geiser clojure-test-mode cider))
+   '(swift-mode lsp-sourcekit yaml-mode markdown-mode markdown-preview-eww markdown-preview-mode prettier-js company tide clojurescript-mode clojure-mode smartparens magit clojure-mode-extra-font-locking quack puppet-mode go-mode geiser clojure-test-mode cider))
  '(show-paren-mode t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
