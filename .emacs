@@ -108,7 +108,15 @@
   (eval-after-load "tide"
     '(progn
        (define-key tide-mode-map (kbd "C-c o") 'tide-organize-imports)
-       (define-key tide-mode-map (kbd "C-c r") 'tide-rename-symbol))))
+       (define-key tide-mode-map (kbd "C-c r") 'tide-rename-symbol)
+       (flycheck-add-mode 'typescript-tslint 'web-mode))))
+
+;; Tide for TSX
+(add-to-list 'auto-mode-alist '("\\.tsx\\'" . web-mode))
+(add-hook 'web-mode-hook
+          (lambda ()
+            (when (string-equal "tsx" (file-name-extension buffer-file-name))
+              (setup-tide-mode))))
 
 ;; Swift with sourcekit-lsp
 (eval-after-load 'lsp-mode
