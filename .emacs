@@ -180,3 +180,22 @@
                                  magit-status-mode)))
                     nil
                   '(display-buffer-same-window)))))
+
+;; Font size handling
+(defun set-font-size (font-size)
+  (interactive "nFont size: ")
+  (set-face-attribute 'default nil :height (* font-size 10)))
+
+(defun get-font-size ()
+  (/ (cdr (assoc :height (face-all-attributes 'default))) 10))
+
+(defun increase-default-font-size ()
+  (interactive
+   (set-font-size (+ (get-font-size) 2))))
+
+(defun decrease-default-font-size ()
+  (interactive
+   (set-font-size (- (get-font-size) 2))))
+
+(define-key global-map (kbd "M-U") 'increase-default-font-size)
+(define-key global-map (kbd "M-u") 'decrease-default-font-size)
