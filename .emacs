@@ -143,15 +143,18 @@
                                (lambda (fg) (set-face-foreground 'mode-line fg))
                                orig-fg))))
 
+(setq
+ package-selected-packages
+ '(swift-mode lsp-sourcekit yaml-mode markdown-mode markdown-preview-eww markdown-preview-mode prettier-js company tide clojurescript-mode clojure-mode smartparens magit clojure-mode-extra-font-locking quack puppet-mode go-mode geiser clojure-test-mode cider))
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(column-number-mode t)
- '(package-selected-packages
-   '(swift-mode lsp-sourcekit yaml-mode markdown-mode markdown-preview-eww markdown-preview-mode prettier-js company tide clojurescript-mode clojure-mode smartparens magit clojure-mode-extra-font-locking quack puppet-mode go-mode geiser clojure-test-mode cider))
  '(show-paren-mode t))
+
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
