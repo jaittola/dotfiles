@@ -12,6 +12,8 @@ bindkey '^[^?' backward-kill-dir
 
 setopt NO_BEEP BASH_AUTO_LIST
 
+DISABLE_AUTO_TITLE="true"
+
 autoload -U compinit 
 compinit
 zmodload -i zsh/complist
