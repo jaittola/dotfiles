@@ -70,6 +70,10 @@
 (define-key global-map (kbd "C-x g") 'magit-status)
 (define-key global-map (kbd "C-c g") 'magit-file-dispatch)
 
+;; Unmap zoom by mouse wheel
+(define-key global-map (vector (list 'control mouse-wheel-down-event)) nil)
+(define-key global-map (vector (list 'control mouse-wheel-up-event)) nil)
+
 ;; Save buffers on focus out
 (add-hook 'focus-out-hook (lambda () (save-some-buffers t)))
 
