@@ -126,12 +126,12 @@
 (setq web-mode-enable-auto-quoting nil)
 
 ;; Swift with sourcekit-lsp
-(eval-after-load 'lsp-mode
-  (progn
-    (require 'lsp-sourcekit)
-    (setq lsp-sourcekit-executable
-          "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/sourcekit-lsp")))
-(add-hook 'swift-mode-hook (lambda () (lsp)))
+;;(eval-after-load 'lsp-mode
+;;  (progn
+;;    (require 'lsp-sourcekit)
+;;    (setq lsp-sourcekit-executable
+;;          "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/sourcekit-lsp")))
+;;(add-hook 'swift-mode-hook (lambda () (lsp)))
 
 ;; aligns annotation to the right hand side
 (setq company-tooltip-align-annotations t)
@@ -150,15 +150,26 @@
                                (lambda (fg) (set-face-foreground 'mode-line fg))
                                orig-fg))))
 
+;; Rusty stuff
+(defun setup-rust-mode ()
+  (setq rust-format-on-save t)
+  (lsp-deferred)
+  (define-key rust-mode-map (kbd "C-c r") 'lsp-rename))
+
+(require 'rust-mode)
+(require 'lsp-mode)
+(add-hook 'rust-mode-hook 'setup-rust-mode)
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(column-number-mode t)
- '(show-paren-mode t)
- '(package-selected-packages
-   '(web-mode swift-mode lsp-sourcekit yaml-mode markdown-mode markdown-preview-eww markdown-preview-mode prettier-js company tide clojurescript-mode clojure-mode smartparens magit clojure-mode-extra-font-locking quack puppet-mode go-mode geiser clojure-test-mode cider)))
+ '(show-paren-mode t))
+
+(setq package-selected-packages
+ '(rust-mode web-mode swift-mode lsp-sourcekit yaml-mode markdown-mode markdown-preview-eww markdown-preview-mode prettier-js company tide clojurescript-mode clojure-mode smartparens magit clojure-mode-extra-font-locking quack puppet-mode go-mode geiser clojure-test-mode cider))
 
 ;; Important utility, reverse text in region.
 (defun my-reverse-region (beg end)
@@ -191,3 +202,9 @@
 
 (define-key global-map (kbd "M-U") 'increase-default-font-size)
 (define-key global-map (kbd "M-u") 'decrease-default-font-size)
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
