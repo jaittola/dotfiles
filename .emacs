@@ -140,6 +140,7 @@
 ;; (add-hook 'before-save-hook 'tide-format-before-save)
 
 (add-hook 'typescript-mode-hook #'setup-tide-mode)
+(add-hook 'js-mode-hook #'setup-tide-mode)
 
 ;; Blink mode line instead of an audible bell.
 (setq ring-bell-function
