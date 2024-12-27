@@ -161,6 +161,21 @@
 (require 'lsp-mode)
 (add-hook 'rust-mode-hook 'setup-rust-mode)
 
+;; python
+(elpy-enable)
+
+;; python, install the following packages separately (with pip3)
+;; pip3 install black autopep8 flake8
+
+;; python, flycheck
+(when (require 'flycheck nil t)
+  (setq elpy-modules (delq 'elpy-module-flymake elpy-modules))
+  (add-hook 'elpy-mode-hook 'flycheck-mode))
+
+;; python, enable autopep8.
+(require 'py-autopep8)
+(add-hook 'elpy-mode-hook 'py-autopep8-mode)
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -170,7 +185,7 @@
  '(show-paren-mode t))
 
 (setq package-selected-packages
- '(rust-mode web-mode swift-mode lsp-sourcekit yaml-mode markdown-mode markdown-preview-eww markdown-preview-mode prettier-js company tide clojurescript-mode clojure-mode smartparens magit clojure-mode-extra-font-locking quack puppet-mode go-mode geiser clojure-test-mode cider))
+ '(rust-mode web-mode swift-mode lsp-sourcekit yaml-mode markdown-mode markdown-preview-eww markdown-preview-mode prettier-js company tide clojurescript-mode clojure-mode smartparens magit clojure-mode-extra-font-locking quack puppet-mode go-mode geiser clojure-test-mode cider elpy flycheck py-autopep8 blacken))
 
 ;; Important utility, reverse text in region.
 (defun my-reverse-region (beg end)
