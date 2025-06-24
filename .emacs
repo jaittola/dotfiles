@@ -185,8 +185,9 @@
  '(column-number-mode t)
  '(show-paren-mode t))
 
+;; Packages
 (setq package-selected-packages
- '(rust-mode web-mode swift-mode lsp-sourcekit yaml-mode markdown-mode markdown-preview-eww markdown-preview-mode prettier-js company tide clojurescript-mode clojure-mode smartparens magit clojure-mode-extra-font-locking quack puppet-mode go-mode geiser clojure-test-mode cider elpy flycheck py-autopep8 blacken))
+   '(editorconfig rust-mode web-mode swift-mode lsp-sourcekit yaml-mode markdown-mode markdown-preview-eww markdown-preview-mode prettier-js company tide clojurescript-mode clojure-mode smartparens magit clojure-mode-extra-font-locking quack puppet-mode go-mode geiser clojure-test-mode cider typescript-mode elpy flycheck py-autopep8 blacken))
 
 ;; Important utility, reverse text in region.
 (defun my-reverse-region (beg end)
