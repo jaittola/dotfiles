@@ -10,7 +10,7 @@ backward-kill-dir () {
 zle -N backward-kill-dir
 bindkey '^[^?' backward-kill-dir
 
-setopt NO_BEEP BASH_AUTO_LIST
+setopt NO_BEEP BASH_AUTO_LIST HIST_IGNORE_SPACE
 
 DISABLE_AUTO_TITLE="true"
 
