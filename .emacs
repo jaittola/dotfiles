@@ -228,4 +228,4 @@
  )
 
 ;; Spell checking
-(setq ispell-program-name "/opt/homebrew/bin/aspell")
+(setq ispell-program-name "/opt/homebrew/bin/hunspell")
